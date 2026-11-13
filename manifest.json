@@ -1,0 +1,50 @@
+{
+  "manifest_version": 3,
+  "name": "学习通章节助手",
+  "version": "1.0.6",
+  "minimum_chrome_version": "120",
+  "description": "顺序播放章节视频、设置 2 倍速、滚动文档到底并等待任务确认。",
+  "permissions": [
+    "storage",
+    "alarms"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "学习通章节助手"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.chaoxing.com/*",
+        "https://*.sslibrary.com/*",
+        "https://*.xuexi365.com/*"
+      ],
+      "js": [
+        "page-agent.js"
+      ],
+      "world": "MAIN",
+      "run_at": "document_start",
+      "all_frames": true,
+      "match_about_blank": true
+    },
+    {
+      "matches": [
+        "*://*.chaoxing.com/*",
+        "https://*.sslibrary.com/*",
+        "https://*.xuexi365.com/*"
+      ],
+      "js": [
+        "bridge.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": true,
+      "match_about_blank": true
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'none'"
+  }
+}

@@ -1,0 +1,24 @@
+# Private credentials and local configuration
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.crx
+# Generated packages and diagnostics
+dist/
+*.zip
+*诊断*.json
+*diagnostic*.json
+*验证结果*.json
+*.log
+*.har
+coverage/
+node_modules/
+# Editor / operating system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini

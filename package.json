@@ -1,0 +1,16 @@
+{
+  "name": "chaoxing-chapter-helper",
+  "version": "1.0.6",
+  "private": true,
+  "description": "Local Chromium extension for chapter media and document controls.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "check": "node scripts/check.cjs",
+    "test": "node --test tests/*.test.cjs",
+    "verify": "npm run check && npm test",
+    "package": "node scripts/package.cjs"
+  }
+}
